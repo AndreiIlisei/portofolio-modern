@@ -31,7 +31,7 @@ type Props = {
   socials: Social[];
 };
 
-const Home = ({ pageInfo, socials, experiences, projects, skills }: Props) => {
+const Home = ({ pageInfo, socials, experiences, projects }: Props) => {
   console.log(experiences);
 
   return (
