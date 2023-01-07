@@ -10,20 +10,21 @@ import {
   ProjectsShowingImg,
   ShowingDiv,
   Skew,
-  WritingH3,
+  PageTitle,
 } from "../styles/Projects";
+import { Project } from "../typings";
 
-type Props = {};
+type Props = {projects: Project[]};
 
-const Projects = (props: Props) => {
-  const projects = [1, 2, 3, 4, 5, 6];
+const Projects = ({projects}: Props) => {
+
   return (
     <MainDivProjects>
-      <WritingH3>Projects</WritingH3>
+      <PageTitle>Projects</PageTitle>
 
       <ProjectsShowingDiv>
         {projects.map((project, i) => (
-          <ShowingDiv>
+          <ShowingDiv key={project._id}>
             <ProjectsShowingImg
               as={motion.img}
               initial={{ y: -300, opacity: 0 }}
@@ -36,13 +37,20 @@ const Projects = (props: Props) => {
             <CaseStudyDiv>
               <CaseStudyH4>
                 <CaseStudySpan>
-                  Case Study {i + 1} of {projects.length}:
+                  Case Study {i + 1} of {projects.length}
                 </CaseStudySpan>{" "}
-                Netflix Clone
+                : Netflix Clone
               </CaseStudyH4>
 
               <CaseStudyP>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus
+                dignissimos exercitationem eos recusandae, quia ad quis quod,
+                saepe porro atque consectetur vitae fugit harum, amet nemo unde
+                animi est aperiam?
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus
+                dignissimos exercitationem eos recusandae, quia ad quis quod,
+                saepe porro atque consectetur vitae fugit harum, amet nemo unde
+                animi est aperiam?     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus
                 dignissimos exercitationem eos recusandae, quia ad quis quod,
                 saepe porro atque consectetur vitae fugit harum, amet nemo unde
                 animi est aperiam?

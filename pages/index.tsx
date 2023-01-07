@@ -1,8 +1,8 @@
-import type { GetStaticProps, NextPage } from "next";
+import type { GetStaticProps } from "next";
 import Head from "next/head";
 import About from "../components/About";
 import ContactForm from "../components/ContactForm";
-import ExperiencePage from "../components/Experience";
+import ExperiencePage from "../components/ExperiencePage";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Projects from "../components/Projects";
@@ -17,7 +17,7 @@ import {
   SkillsSection,
 } from "../styles/Index";
 import { PageInfo, Project, Skills, Social, Experience } from "../typings";
-import { fetchExperience } from "../utils/fetchExperience";
+import { fetchExperience } from "../utils/fetchExperiences";
 import { fetchPageInfo } from "../utils/fetchPageInfo";
 import { fetchProjects } from "../utils/fetchProjects";
 import { fetchSkills } from "../utils/fetchSkills";
@@ -32,10 +32,16 @@ type Props = {
 };
 
 const Home = ({ pageInfo, socials, experiences, projects, skills }: Props) => {
+  console.log(experiences);
+
   return (
     <IndexDiv>
       <Head>
         <title>Andrei`s Portofolio</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&display=swap" rel="stylesheet"/>
+
       </Head>
 
       <Header socials={socials} />
@@ -49,7 +55,7 @@ const Home = ({ pageInfo, socials, experiences, projects, skills }: Props) => {
       </AboutSection>
 
       <ExperienceSection id="experience">
-        <ExperiencePage experiences={experiences} />
+        <ExperiencePage />
       </ExperienceSection>
 
       <SkillsSection id="skills">
@@ -57,7 +63,7 @@ const Home = ({ pageInfo, socials, experiences, projects, skills }: Props) => {
       </SkillsSection>
 
       <ProjectsSection id="projects">
-        <Projects />
+        <Projects projects={projects} />
       </ProjectsSection>
 
       <ContactSection id="contact">

@@ -13,11 +13,20 @@ export const MainDivProjects = styled.div`
   margin: 0 auto 0 auto;
   align-items: center;
   z-index: 0;
+`;
 
-  //   @media (max-width: 600px) {
-  //     font-size: 60px;
-  //     flex-direction: column;
-  //   }
+export const PageTitle = styled.h3`
+  position: absolute;
+  text-transform: uppercase;
+  color: rgb(107 114 128);
+  font-size: 20px;
+  letter-spacing: 20px;
+  top: 96px;
+  margin-left: 20px;
+
+  @media (min-width: 600px) {
+    font-size: 60px;
+  }
 `;
 
 export const ProjectsShowingDiv = styled.div`
@@ -31,7 +40,7 @@ export const ProjectsShowingDiv = styled.div`
   --tw-scroll-snap-strictness: mandatory;
 
   ::-webkit-scrollbar {
-    width: 12px;
+    height: 12px;
     background-color: rgb(156, 163, 175, 0.2);
   }
 
@@ -40,58 +49,60 @@ export const ProjectsShowingDiv = styled.div`
   }
 `;
 
-export const ProjectsShowingImg = styled(Image)`
-  height: 400px;
-  width: 400px;
-`;
-
 export const ShowingDiv = styled.div`
   width: 100%;
   flex-shrink: 0;
   scroll-snap-align: center;
   display: flex;
   flex-direction: column;
-  margin: 20px 0 20px 0;
   align-items: center;
   justify-content: center;
-  padding: 166px;
   height: 100vh;
-`;
 
-export const WritingH3 = styled.h3`
-  position: absolute;
-  text-transform: uppercase;
-  color: rgb(107 114 128);
-  font-size: 20px;
-  letter-spacing: 20px;
-  top: 96px;
-
-  @media (max-width: 600px) {
-    font-size: 60px;
+  @media (min-width: 600px) {
+    padding: 166px;
+    margin: 20px 0 20px 0;
   }
 `;
 
-export const Skew = styled.div`
-  width: 100%;
-  position: absolute;
-  top: 30%;
-  left: 0;
-  height: 500px;
-  background-color: ${({ theme }) => theme.palette.yellow};
-  opacity: 30%;
-  transform: skewY(-12deg);
+export const ProjectsShowingImg = styled(Image)`
+  height: 100px;
+  width: 100px;
+
+  @media (min-width: 600px) {
+    height: 400px;
+    width: 400px;
+  }
 `;
 
 export const CaseStudyDiv = styled.div`
-  margin-top: 40px;
-  padding-left: 4px;
-  padding-right: 40px;
-  max-width: 1152px;
+  width: 350px;
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1180px) and (orientation: landscape) {
+    width: 800px;
+  }
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1180px) and (orientation: portrait) {
+    width: 600px;
+  }
+
+  @media (min-width: 1500px) {
+    margin-top: 40px;
+    padding-left: 4px;
+    padding-right: 40px;
+    max-width: 1152px;
+  }
 `;
+
 export const CaseStudyH4 = styled.h4`
-  font-size: 30px;
+  font-size: 15px;
   font-weight: 400px;
   text-align: center;
+  padding: 10px;
+
+  @media (min-width: 600px) {
+    font-size: 30px;
+  }
 `;
 
 export const CaseStudySpan = styled.span`
@@ -100,8 +111,33 @@ export const CaseStudySpan = styled.span`
 `;
 
 export const CaseStudyP = styled.p`
-  font-size: 30px;
-  text-align: left;
+  font-size: 10px;
+  text-align: center;
+  text-align: justify;
+  text-justify: inter-word;
 
-  //   text-align: center on phones
+  @media (min-width: 600px) {
+    font-size: 15px;
+  }
+`;
+
+export const Skew = styled.div`
+  width: 100%;
+  position: absolute;
+  top: 25%;
+  left: 0;
+  height: 400px;
+  background-color: ${({ theme }) => theme.palette.yellow};
+  opacity: 30%;
+  transform: skewY(-12deg);
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1180px) and (orientation: landscape) {
+    height: 600px;
+    top: 20%;
+  }
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1180px) and (orientation: portrait) {
+    height: 800px;
+    top: 20%
+  }
 `;

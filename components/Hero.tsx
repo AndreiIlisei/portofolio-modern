@@ -33,6 +33,8 @@ const Hero = ({ pageInfo }: Props) => {
   return (
     <MainDiv>
       <BackgroundCircles />
+
+
       <ProfileImage
         src={urlFor(pageInfo?.profilePic).url()}
         alt="ProfileImage"

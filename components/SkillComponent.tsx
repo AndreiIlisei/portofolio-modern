@@ -6,7 +6,7 @@ import {
   SkillsImgMainDiv,
   SkillsImgOverlayDiv,
   SkillsImgOverlayP,
-} from "../styles/Skills";
+} from "../styles/SkillComponents";
 
 type Props = {
   directionLeft?: boolean;
@@ -20,8 +20,6 @@ const SkillComponent = ({ directionLeft }: Props) => (
       // transition={{ duration: 1 }}
       // whileInView={{ opacity: 1, x: 0 }}
       src="https://reactjs.org/logo-og.png"
-      height="150px"
-      width="150px"
     />
 
     <SkillsImgAbsolutePosition>

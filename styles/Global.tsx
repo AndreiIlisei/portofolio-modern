@@ -10,7 +10,8 @@ const GlobalStyle = createGlobalStyle<Props>`
         box-sizing: border-box;
         margin: 0;
         outline: none;
-        font-family: "Lucida Console", "Courier New", monospace;;
+        font-family: 'Noto Sans', sans-serif;
+
     }
     a {
         text-decoration: none;

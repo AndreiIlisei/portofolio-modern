@@ -2,71 +2,72 @@ import { motion } from "framer-motion";
 import React from "react";
 import {
   ArticleCard,
-  ArticleImage,
+  JobPicture,
   ExperienceCardDiv,
-  ExperienceCardH4,
+  CompanyName,
   ExperienceCardImg,
-  ExperienceCardP,
+  PositionDescription,
+  ExperienceCardLi,
+  PeriodOfWork,
+  ExperienceCardTechDiv,
   ExperienceCardUl,
-} from "../styles/Experience";
+  JobDetails,
+  JobDetailsRow,
+  StopSVG,
+} from "../styles/ExperienceCard";
 import { Experience } from "../typings";
 
-type Props = {
-  experiences: Experience;
-};
+type Props = {};
 
-const ExperienceCard = ({ experiences }: Props) => {
+const ExperienceCard = (props: Props) => {
   return (
     <ArticleCard>
-      <ArticleImage
-        as={motion.img}
-        initial={{
-          y: -100,
-          opacity: 0,
-        }}
-        transition={{ duration: 1.2 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        src="./shape.jpg"
-      />
+      <JobDetails>
+        <JobPicture
+          as={motion.img}
+          initial={{
+            y: -100,
+            opacity: 0,
+          }}
+          transition={{ duration: 1.2 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          src="./shape.jpg"
+        />
+
+        <JobDetailsRow>
+          <CompanyName> Shape Games </CompanyName>
+          <PositionDescription>Frontend Developer Intern</PositionDescription>
+          <PeriodOfWork>10-11-2019 / 10-11-2022 </PeriodOfWork>
+          {/* <PeriodOfWork> Ended 10-11-2019 </PeriodOfWork> */}
+        </JobDetailsRow>
+      </JobDetails>
 
       <ExperienceCardDiv>
-        <ExperienceCardH4> {experiences.company} </ExperienceCardH4>
-        <ExperienceCardP> {experiences.jobTitle} </ExperienceCardP>
-        <div>
-          <ExperienceCardImg
-            src="/react.png"
-            height="40px"
-            width="40px"
-            alt=""
-          />
-          {/* <ExperienceCardImg
-            src="/react.png"
-            height="40px"
-            width="40px"
-            alt=""
-          />
-          <ExperienceCardImg
-            src="/react.png"
-            height="40px"
-            width="40px"
-            alt=""
-          />
-          <ExperienceCardImg
-            src="/react.png"
-            height="40px"
-            width="40px"
-            alt=""
-          /> */}
-        </div>
-        <ExperienceCardP> Started Work - Ended..</ExperienceCardP>
+        <ExperienceCardTechDiv>
+          <ExperienceCardImg src="/react.png" alt="" />
+          <ExperienceCardImg src="/puuf.jpg" alt="" />
+          <ExperienceCardImg src="/react.png" alt="" />
+          <ExperienceCardImg src="/react.png" alt="" />
+          <ExperienceCardImg src="/react.png" alt="" />
+          <ExperienceCardImg src="/react.png" alt="" />
+
+        </ExperienceCardTechDiv>
 
         <ExperienceCardUl>
-          <li>Summary</li>
-          <li>Summary</li>
-          <li>Summary</li>
-          <li>Summary</li>
-          <li>Summary</li>
+          <ExperienceCardLi>
+            I have been doing this and that and other stuff
+          </ExperienceCardLi>
+          <ExperienceCardLi>
+            I have been doing this and tha dsadsat
+          </ExperienceCardLi>
+          <ExperienceCardLi>
+            I have been doing this and that dasda
+          </ExperienceCardLi>
+          <ExperienceCardLi>I have been doing this and that</ExperienceCardLi>
+          <ExperienceCardLi>
+            I have been doing this and tha dadsat
+          </ExperienceCardLi>
         </ExperienceCardUl>
       </ExperienceCardDiv>
     </ArticleCard>

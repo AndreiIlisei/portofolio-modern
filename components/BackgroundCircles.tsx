@@ -3,10 +3,7 @@ import React from "react";
 import {
   BackgroundCirclesDiv,
   FirstCircle,
-  SecondCircle,
-  ThirdCircle,
   ForthCircle,
-  FifthCircle,
 } from "../styles/BackgroundCircles";
 
 type Props = {};
@@ -26,10 +23,7 @@ const BackgroundCircles = (props: Props) => {
       transition={{ duration: 2.5 }}
     >
       <FirstCircle />
-      {/* <SecondCircle /> */}
-      {/* <ThirdCircle /> */}
       <ForthCircle />
-      {/* <FifthCircle /> */}
     </BackgroundCirclesDiv>
   );
 };

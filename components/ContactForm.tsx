@@ -2,9 +2,9 @@ import React from "react";
 import {
   Button,
   ContactFormDiv,
-  ContactFormH4,
+  // ContactFormH4,
   ContactFormMainDiv,
-  ContactFormSpan,
+  // ContactFormSpan,
   EnvelopeIconsStyle,
   Form,
   FormDiv,
@@ -16,7 +16,8 @@ import {
   IconsSpacingDiv,
   MapIconsStyle,
   PhoneIconsStyle,
-  WritingH3,
+  PageTitle,
+  HeroIconsWrap,
 } from "../styles/ContactForm";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { PageInfo } from "../typings";
@@ -38,26 +39,31 @@ const ContactForm = ({ pageInfo }: Props) => {
 
   return (
     <ContactFormMainDiv>
-      <WritingH3>Contact</WritingH3>
+      <PageTitle>Contact</PageTitle>
 
       <ContactFormDiv>
-        <ContactFormH4>
+        {/* <ContactFormH4>
           I want a job!!
           <ContactFormSpan>Lets talk</ContactFormSpan>
-        </ContactFormH4>
+        </ContactFormH4> */}
 
         <IconsSpacingDiv>
+          <HeroIconsWrap>
+            <HeroIconsDiv>
+              <HeroIconsP>
+                <PhoneIconsStyle />
+                {pageInfo?.phoneNumber}
+              </HeroIconsP>
+            </HeroIconsDiv>
+            <HeroIconsDiv>
+              <MapIconsStyle />
+              <HeroIconsP> Random Street</HeroIconsP>
+            </HeroIconsDiv>
+          </HeroIconsWrap>
           <HeroIconsDiv>
-            <PhoneIconsStyle />
-            <HeroIconsP>{pageInfo?.phoneNumber}</HeroIconsP>
-          </HeroIconsDiv>
-          <HeroIconsDiv>
-            <MapIconsStyle />
-            <HeroIconsP>Random Street</HeroIconsP>
-          </HeroIconsDiv>
-          <HeroIconsDiv>
-            <EnvelopeIconsStyle />
-            <HeroIconsP>123456</HeroIconsP>
+            <HeroIconsP>
+              <EnvelopeIconsStyle /> andrei.sv97@yahoo.com
+            </HeroIconsP>
           </HeroIconsDiv>
         </IconsSpacingDiv>
 

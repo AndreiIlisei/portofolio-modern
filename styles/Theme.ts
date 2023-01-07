@@ -1,5 +1,6 @@
 const defaultTheme = {
   fontSize: {
+    textXXS: "10px",
     textXS: "13px",
     textSm: "24px",
     textMd: "32px",
