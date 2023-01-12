@@ -2,9 +2,7 @@ import React from "react";
 import {
   Button,
   ContactFormDiv,
-  // ContactFormH4,
   ContactFormMainDiv,
-  // ContactFormSpan,
   EnvelopeIconsStyle,
   Form,
   FormDiv,

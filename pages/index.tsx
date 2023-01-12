@@ -31,8 +31,7 @@ type Props = {
   socials: Social[];
 };
 
-const Home = ({ pageInfo, socials, experiences, projects }: Props) => {
-  console.log(experiences);
+const Home = ({ pageInfo, socials, experiences, projects, skills }: Props) => {
 
   return (
     <IndexDiv>
@@ -51,11 +50,11 @@ const Home = ({ pageInfo, socials, experiences, projects }: Props) => {
       </AboutSection>
 
       <ExperienceSection id="experience">
-        <ExperiencePage />
+        <ExperiencePage experiences={experiences} />
       </ExperienceSection>
 
       <SkillsSection id="skills">
-        <SkillsPage />
+        <SkillsPage skills={skills} />
       </SkillsSection>
 
       <ProjectsSection id="projects">
@@ -82,8 +81,8 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     props: {
       pageInfo,
       experiences,
-      skills,
       socials,
+      skills,
       projects,
     },
     revalidate: 30,
