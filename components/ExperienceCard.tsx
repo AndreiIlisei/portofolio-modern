@@ -17,9 +17,9 @@ import {
 } from "../styles/ExperienceCard";
 import { Experience } from "../typings";
 
-type Props = {};
+type Props = { experience: Experience };
 
-const ExperienceCard = (props: Props) => {
+const ExperienceCard = ({ experience }: Props) => {
   return (
     <ArticleCard>
       <JobDetails>
@@ -36,8 +36,8 @@ const ExperienceCard = (props: Props) => {
         />
 
         <JobDetailsRow>
-          <CompanyName> Shape Games </CompanyName>
-          <PositionDescription>Frontend Developer Intern</PositionDescription>
+          <CompanyName> {experience.company} </CompanyName>
+          <PositionDescription>{experience.jobTitle}</PositionDescription>
           <PeriodOfWork>10-11-2019 / 10-11-2022 </PeriodOfWork>
           {/* <PeriodOfWork> Ended 10-11-2019 </PeriodOfWork> */}
         </JobDetailsRow>
@@ -51,7 +51,6 @@ const ExperienceCard = (props: Props) => {
           <ExperienceCardImg src="/react.png" alt="" />
           <ExperienceCardImg src="/react.png" alt="" />
           <ExperienceCardImg src="/react.png" alt="" />
-
         </ExperienceCardTechDiv>
 
         <ExperienceCardUl>

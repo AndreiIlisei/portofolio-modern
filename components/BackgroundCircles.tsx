@@ -6,9 +6,7 @@ import {
   ForthCircle,
 } from "../styles/BackgroundCircles";
 
-type Props = {};
-
-const BackgroundCircles = (props: Props) => {
+const BackgroundCircles = () => {
   return (
     <BackgroundCirclesDiv
       as={motion.div}

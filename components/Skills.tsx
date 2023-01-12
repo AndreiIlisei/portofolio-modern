@@ -6,11 +6,13 @@ import {
   SkillComponentGrid,
   PageTitle,
 } from "../styles/Skills";
+import { Skills } from "../typings";
 import SkillComponent from "./SkillComponent";
 
-type Props = {};
+type Props = { skills: Skills[] };
 
-const SkillsPage = (props: Props) => {
+const SkillsPage = ({ skills }: Props) => {
+  console.log(skills[0].image);
   return (
     <MainDivSkills as={motion.div}>
       <PageTitle>Skills</PageTitle>
@@ -18,22 +20,9 @@ const SkillsPage = (props: Props) => {
       <ProficiencyH3>Hover over a skill for currency</ProficiencyH3>
 
       <SkillComponentGrid>
-        <SkillComponent />
-        <SkillComponent />
-        <SkillComponent />
-        <SkillComponent />
-        <SkillComponent />
-        <SkillComponent />
-        <SkillComponent />
-        <SkillComponent />
-        <SkillComponent />
-        <SkillComponent />
-        <SkillComponent />
-        <SkillComponent />
-        <SkillComponent />
-        <SkillComponent />
-        <SkillComponent />
-        <SkillComponent />
+        {skills?.map((skill) => (
+          <SkillComponent key={skill._id} skill={skill} />
+        ))}
       </SkillComponentGrid>
     </MainDivSkills>
   );

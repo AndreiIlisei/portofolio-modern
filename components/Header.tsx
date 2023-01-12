@@ -45,32 +45,33 @@ const Header = ({ socials }: Props) => {
       </IconsStyle>
 
       {/* Get in touch icon */}
-      <Link href={"#contact"}>
-        <IconsStyle
-          as={motion.div}
-          initial={{
-            x: 500,
-            opacity: 0,
-            scale: 0.5,
-          }}
-          animate={{
-            x: 0,
-            opacity: 1,
-            scale: 1,
-          }}
-          transition={{ duration: 1.5 }}
-        >
-          <EmailIconsStyle>
+      <div onClick={() => (window.location.href = "#contact")}>
+        <EmailIconsStyle>
+          <IconsStyle
+            as={motion.div}
+            initial={{
+              x: 500,
+              opacity: 0,
+              scale: 0.5,
+            }}
+            animate={{
+              x: 0,
+              opacity: 1,
+              scale: 1,
+            }}
+            transition={{ duration: 1.5 }}
+          >
+            <EmailText> Get In Touch</EmailText>
+
             <SocialIcon
               network="email"
               fgColor="gray"
               bgColor="transparent"
               style={{ height: 40, width: 40 }}
             />
-            <EmailText> Get In Touch</EmailText>
-          </EmailIconsStyle>
-        </IconsStyle>
-      </Link>
+          </IconsStyle>
+        </EmailIconsStyle>
+      </div>
     </StickyHeader>
   );
 };

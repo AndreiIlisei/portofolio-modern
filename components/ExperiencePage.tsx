@@ -8,9 +8,9 @@ import {
 import { Experience } from "../typings";
 import ExperienceCard from "./ExperienceCard";
 
-type Props = {};
+type Props = { experiences: Experience[] };
 
-const ExperiencePage = (props: Props) => {
+const ExperiencePage = ({ experiences }: Props) => {
   return (
     <ExperiencePageDiv
       as={motion.div}
@@ -21,11 +21,9 @@ const ExperiencePage = (props: Props) => {
       <PageTitle>Experience</PageTitle>
 
       <ExperienceCardMainDiv>
-        <ExperienceCard />
-        <ExperienceCard />
-        {/* {experiences?.map((experience) => (
+        {experiences?.map((experience) => (
           <ExperienceCard key={experience._id} experience={experience} />
-        ))} */}
+        ))}
       </ExperienceCardMainDiv>
     </ExperiencePageDiv>
   );
